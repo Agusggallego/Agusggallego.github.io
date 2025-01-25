@@ -1,3 +1,6 @@
+
+
+//VALIDACION DE FOMULARIO -QUE SE LLENEN TODOS LOS CASILLEROS Y UNC CORRECTO GMAIL.
 document.querySelector("[data-form]").addEventListener("submit", function (e) {
     const name = document.querySelector("[name='name']").value.trim();
     const email = document.querySelector("[name='email']").value.trim();

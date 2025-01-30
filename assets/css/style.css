@@ -447,7 +447,10 @@ main {
 .social-item .social-link:hover { color: var(--light-gray); }
 
 
-
+.a-item{
+  text-decoration: none;
+  color: var(--white-1);
+}
 
 
 /*-----------------------------------*\
@@ -874,6 +877,11 @@ main {
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
+
+.link-portfolio{
+  
+  color: var(--white-2)
+}
 
 .filter-list { display: none; }
 

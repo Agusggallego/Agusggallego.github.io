@@ -163,7 +163,7 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>blog</button>
+            <button class="navbar-link" data-nav-link>Blog</button>
           </li>
 
           <li class="navbar-item">
@@ -515,13 +515,13 @@
 
 
       <!--
-        - #blog
+        - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="blog">
+      <article class="portfolio" data-page="porfolio">
 
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title">Porfolio</h2>
         </header>
         <section class="about-text">
           <p>🎯 ¿Te gustan los CTFs?<br> 
@@ -529,6 +529,25 @@
 
         <section class="projects">
 
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Fácil</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Medio</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Difícil</button>
+            </li>
+
+          </ul>
 
           <div class="filter-select-box">
 
@@ -542,12 +561,32 @@
 
             </button>
 
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Fácil</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Medio</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Difícil</button>
+              </li>
+
+            </ul>
+
           </div>
 
           <ul class="project-list">
           
       <!--DOCKERLAB-->
-            <li class="project-item  active">
+            <li class="project-item  active" data-filter-item data-category="fácil">
               <a href="/assets/cfts/Whoiam.pdf" target="_blank">
 
                 <figure class="project-img">
@@ -558,19 +597,224 @@
                   <img src="./assets/images/1.png" alt="finance" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Introduction to Phishing </h3>
+                <h3 class="project-title">Whoiam • Fácil </h3>
 
-                <p class="project-category">Este escenario fue mi primera práctica con correos de phishing.</p>
+                <p class="project-category">| NMAP | GOBUSTER | WPSCAN | SEARCHSPLOIT | </p>
 
               </a>
-            </li>            
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="difícil">
+              <a href="/assets/cfts/Crackoff.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br> Crackoff • Difícil <br></h3>
+
+                <p class="project-category">| NMAP | SQLMAP | HYDRA | SSH | NETSTAT | CHISEL |PROXYCHAINS | METASPLOIT | MSFVENOM | NETCAT |</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="medio">
+              <a href="/assets/cfts/Chmod-4755.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br>Chmod-4755 • Medio <br></h3>
+
+                <p class="project-category">| NMAP | Enum4linux | SSH | SMB | PYTHON |</p>
+
+              </a>
+            </li>
+          
+            <li class="project-item  active" data-filter-item data-category="fácil">
+              <a href="/assets/cfts/WhereIsMyWebShell.pdf" target="_blank" >
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"> <br>WhereIsMyWebShell • Fácil <br> </h3>
+
+                <p class="project-category">| NMAP | GOBUSTER | WFUZZ | CURL | REVERSE SHELL |</p>
+
+              </a>
+            </li>         
+
+            <li class="project-item  active" data-filter-item data-category="medio">
+              <a href="/assets/cfts/PyRed.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br>PyRed • Medio<br></h3>
+
+                <p class="project-category">| NMAP | PYTHON | NETCAT | </p>
+
+              </a>
+            </li>
+
+           <!--HTB-->
+            <li class="project-item  active" data-filter-item data-category="medio">
+              <a href="/assets/cfts/AMBASSADOR.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/ambassador.jpg" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br> Ambassador • Medio<br></h3>
+
+                <p class="project-category">| NMAP | CURL | SEARCHSPLOIT | EXPLOIT-DB | SQLite3 | MySQL Client | </p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="difícil">
+              <a href="/assets/cfts/HackTheHeaven.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br> HackTheHeaven • Difícil <br></h3>
+
+                <p class="project-category">| NMAP | GOBUSTER | WFUZZ | PHP | NETCAT | PYTHON |</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="difícil">
+              <a href="/assets/cfts/Sender.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/8.png" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br>Sender • Difícil <br></h3>
+
+                <p class="project-category">| NMAP | CELW | HYDRA | SSH | GDB | PWNDBG | METASPLOIT | PYTHON |</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="fácil">
+              <a href="/assets/cfts/Winterfell.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/3.png" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br>Winterfell • Fácil <br> </h3>
+
+                <p class="project-category">| NMAP | WFUZZ | Enum4linux | Crackmapexec | SMBMAP | Hydra | </p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="medio">
+              <a href="/assets/cfts/Mapache2.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/6.png" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title"><br>Mapache2 • Medio <br> </h3>
+
+                <p class="project-category">| NMAP | BURP SUITE | CEWL | HYDRA | SSH | </p>
+
+              </a>
+            </li>
+
+
+
+
+            
 
           </ul>
 
         </section>
 
       </article>
+      <article class="portfolio" data-page="blog">
 
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+        <section class="about-text">
+          <p>¡Bienvenidx a mi blog de ciberseguridad ofensiva! 🕶️💻<br>
+            Este espacio está pensado para compartir conocimientos 📚, curiosidades 🤓, herramientas 🛠️ y aprendizajes 💡 del camino en el mundo del hacking ético y el pentesting.
+            Voy documentando lo que aprendo, lo que me sorprende y lo que me apasiona ❤️. 
+        </section>
+
+        <section class="projects">
+
+          <ul class="project-list">
+          
+      <!--DOCKERLAB-->
+            <li class="project-item  active" data-filter-item data-category="fácil">
+              <a href="/assets/cfts/Whoiam.pdf" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/1.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Whoiam • Fácil </h3>
+
+                <p class="project-category">| NMAP | GOBUSTER | WPSCAN | SEARCHSPLOIT | </p>
+
+              </a>
+            </li>
+          </ul>
+
+        </section>
+
+      </article>
 
 
 

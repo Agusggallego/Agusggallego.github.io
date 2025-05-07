@@ -43,7 +43,7 @@
   --text-gradient-yellow: linear-gradient(
     to right, 
     hsl(305, 100%, 75%), 
-    hsl(275, 100%, 70%)
+    hsl(275, 100%, 70%)-
   );
 
   /* solid */
@@ -78,6 +78,7 @@
   --fs-7: 13px;
   --fs-8: 11px;
 
+  
   /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
@@ -389,8 +390,6 @@ article.active {
   border-radius: inherit;
   z-index: -1;
 }
-
-
 
 
 

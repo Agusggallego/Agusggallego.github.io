@@ -852,20 +852,23 @@
 
           <h3 class="h3 form-title">Contacta conmigo!</h3>
 <!--inicio de formulario-->
-          <form   action="https://formspree.io/f/xjkgknle" method="POST" class="form" data-form>
-            <div class="input-wrapper">
-              <!--nombre-->
-              <input type="text" name="name" class="form-input" placeholder="Nombre" required data-form-input>
-              <!--gmail-->
-              <input type="email" name="email" class="form-input" placeholder="Gmail" required data-form-input>
-            </div>
-            <textarea name="message" class="form-input" placeholder="Mensaje" required data-form-input></textarea>
-            <!--mensaje-->
-            <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
+
+        <form id="form" method="POST" class="form" data-form>
+          <div class="input-wrapper">
+            <input type="text" name="name" class="form-input" placeholder="Nombre" required data-form-input>
+            <input type="email" name="email" class="form-input" placeholder="Gmail" required data-form-input>
+          </div>
+          <textarea name="message" class="form-input" placeholder="Mensaje" required data-form-input></textarea>
+
+          <button class="form-btn" type="submit" data-form-btn>
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Send Message</span>
+          </button>
+        </form>
+
+
+
+
 
 
         </section>

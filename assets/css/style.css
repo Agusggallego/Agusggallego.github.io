@@ -43,7 +43,7 @@
   --text-gradient-yellow: linear-gradient(
     to right, 
     hsl(305, 100%, 75%), 
-    hsl(275, 100%, 70%)-
+    hsl(275, 100%, 70%)
   );
 
   /* solid */
@@ -516,6 +516,7 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-8);
   text-transform: uppercase;
+  text-decoration: underline;
   margin-bottom: 2px;
 }
 

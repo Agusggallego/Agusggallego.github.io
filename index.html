@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src https://unpkg.com; object-src 'none'; base-uri 'self'; form-action 'none'">
-  
-  <title>Agus Gallego</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; manifest-src 'none'; media-src 'none'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0d0b14">
+  <meta name="description" content="Portfolio de Agustina Gallego, analista en ciberseguridad (SOC, pentesting y DevSecOps): experiencia, formación, writeups de CTF y blog.">
+  <meta name="author" content="Agustina Gallego">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://agusggallego.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Agustina Gallego | Ciberseguridad">
+  <meta property="og:description" content="Portfolio de ciberseguridad: SOC, pentesting, writeups de CTF y blog.">
+  <meta property="og:url" content="https://agusggallego.github.io/">
+  <meta property="og:image" content="https://agusggallego.github.io/assets/images/Compu.PNG">
+  <meta name="twitter:card" content="summary">
 
-  <!--
-    - favicon
-  -->
+  <title>Agustina Gallego | Ciberseguridad</title>
+
   <link rel="icon" href="./assets/images/Compu.PNG">
-
-  <!--
-    - custom css link
-  -->
+  <link rel="preload" href="./assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="./assets/js/frame-guard.js"></script>
 </head>
 
 <body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <main>
 
@@ -47,15 +50,15 @@
           <p class="title">Cybersecurity</p>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
+        <button class="info_more-btn" type="button" aria-expanded="false" aria-controls="sidebar-contacto" data-sidebar-btn>
           <span>CONTACTO</span>
 
-          <ion-icon name="chevron-down"></ion-icon>
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#chevron-down"></use></svg>
         </button>
 
       </div>
 
-      <div class="sidebar-info_more">
+      <div class="sidebar-info_more" id="sidebar-contacto">
 
         <div class="separator"></div>
 
@@ -64,7 +67,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#mail-outline"></use></svg>
             </div>
 
             <div class="contact-info">
@@ -77,7 +80,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="document-outline"></ion-icon>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#document-outline"></use></svg>
             </div>
 
             <div class="contact-info">
@@ -90,7 +93,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="logo-linkedin"></ion-icon>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#logo-linkedin"></use></svg>
             </div>
 
             <div class="contact-info">
@@ -104,7 +107,7 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="earth-outline"></ion-icon>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#earth-outline"></use></svg>
             </div>
 
             <div class="contact-info">
@@ -114,54 +117,48 @@
             </div>
 
           </li>
-  
- 
 
 
         </ul>
 
         <div class="separator"></div>
 
-       
 
       </div>
 
     </aside>
 
 
-    <div class="main-content">
+    <div class="main-content" id="contenido" tabindex="-1">
 
       <!--
         - #NAVBAR
       -->
 
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Principal">
 
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" type="button" data-nav-link="about" aria-current="page">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" type="button" data-nav-link="resume">Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" type="button" data-nav-link="portfolio">Portfolio</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" type="button" data-nav-link="blog">Blog</button>
           </li>
 
-        
+
         </ul>
 
       </nav>
-
-
-
 
 
       <!--
@@ -176,15 +173,15 @@
 
         <section class="about-text">
           <p>
-          ¡Hola! Soy Agustina Gallego 👩‍💻, estudiante de la Licenciatura en Seguridad en Informática. Apasionada por la ciberseguridad ofensiva 🔐
-           -Red Team-. He realizado diversos cursos en pruebas de penetración, análisis de riesgos e identificación de vulnerabilidades 💻. 
+          ¡Hola! Soy Agustina Gallego 👩‍💻, estudiante de Ingeniería en Sistemas en la UTN. Apasionada por la ciberseguridad ofensiva 🔐
+           -Red Team-. He realizado diversos cursos en pruebas de penetración, análisis de riesgos e identificación de vulnerabilidades 💻.
            Me encanta enfrentar desafíos complejos y encontrar soluciones, poniendo en práctica estos conocimientos resolviendo máquinas vulnerables
            dentro de entornos controlados 🧩.
           </p>
 
           <p>
-            Estoy convencida de que siempre se puede aprender algo nuevo, y eso es lo que me motiva cada día 🚀. 
-            Me gusta compartir lo que sé con los demás y seguir creciendo en este campo que me apasiona 🌱. 
+            Estoy convencida de que siempre se puede aprender algo nuevo, y eso es lo que me motiva cada día 🚀.
+            Me gusta compartir lo que sé con los demás y seguir creciendo en este campo que me apasiona 🌱.
             Si querés saber más sobre mi trabajo, ¡te invito a explorar mis proyectos! 💡
           </p>
         </section>
@@ -194,7 +191,7 @@
           - service
         -->
 
-        <section class="service"> 
+        <section class="service">
 
           <h3 class="h3 service-title">Qué hago?</h3>
 
@@ -203,7 +200,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/iconsvg-rosa3.svg" alt="design icon" width="40">
+                <img src="./assets/images/iconsvg-rosa3.svg" alt="" width="40">
               </div>
 
               <div class="service-content-box">
@@ -219,7 +216,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/iconosvg1-rosa.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/iconosvg1-rosa.svg" alt="" width="40">
               </div>
 
               <div class="service-content-box">
@@ -235,7 +232,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/iconsvg2-rosa.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/iconsvg2-rosa.svg" alt="" width="40">
               </div>
 
               <div class="service-content-box">
@@ -251,7 +248,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/iconsvg-rosa4.svg" alt="camera icon" width="40">
+                <img src="./assets/images/iconsvg-rosa4.svg" alt="" width="40">
               </div>
 
               <div class="service-content-box">
@@ -266,36 +263,11 @@
 
           </ul>
 
-         <div class="modal-container" data-modal-container>
 
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-  
-          </section>
-
-         </div>
         </section>
 
 
-   
-
       </article>
-
-
-
 
 
       <!--
@@ -311,7 +283,7 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="terminal-outline"></ion-icon>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#terminal-outline"></use></svg>
             </div>
 
             <h3 class="h3">Experiencia</h3>
@@ -331,14 +303,15 @@
               </p>
 
             </li>
-              <li class="timeline-item">
+
+            <li class="timeline-item">
 
               <h4 class="h4 timeline-item-title">Proyectos Personales y CTFs</h4>
 
               <span>2024 - Actualidad</span>
 
               <p class="timeline-text">
-                <b>Portfolio de Ciberseguridad</b> <br>Esta experiencia representa mi trabajo práctico y autodidacta en seguridad ofensiva. A través de laboratorios controlados y desafíos Capture The Flag (CTF), he desarrollado y perfeccionado mis habilidades en pentesting, explotación de vulnerabilidades y escalación de privilegios en sistemas Windows y Linux. Utilicé herramientas estándar de la industria como Burp Suite y Metasploit, y automaticé tareas mediante scripts en Python y Bash, documentando mis hallazgos según marcos como OWASP y MITRE ATT&CK.
+                <b>Portfolio de Ciberseguridad</b> <br>Esta experiencia representa mi trabajo práctico y autodidacta en seguridad ofensiva. A través de laboratorios controlados y desafíos Capture The Flag (CTF), he desarrollado y perfeccionado mis habilidades en pentesting, explotación de vulnerabilidades y escalación de privilegios en sistemas Windows y Linux. Utilicé herramientas estándar de la industria como Burp Suite y Metasploit, y automaticé tareas mediante scripts en Python y Bash, documentando mis hallazgos según marcos como OWASP y MITRE ATT&amp;CK.
               </p>
 
             </li>
@@ -351,7 +324,7 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#book-outline"></use></svg>
             </div>
 
             <h3 class="h3">Educación</h3>
@@ -362,12 +335,36 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Universidad Siglo 21</h4>
+              <h4 class="h4 timeline-item-title">Universidad Tecnológica Nacional (UTN)</h4>
 
-              <span>2023 - Actualidad</span>
+              <span>2026 - Actualidad</span>
 
               <p class="timeline-text">
-                <b>Lic. Seguridad en Informática</b> <br> Desarrollar e implementar estrategias de seguridad informática para organizaciones implica identificar riesgos, vulnerabilidades y activos informáticos. 
+                <b>Ingeniería en Sistemas de Información</b> <br> Formación en análisis, diseño y desarrollo de sistemas de información: programación, bases de datos, redes, arquitectura de software y gestión de proyectos, como base técnica para la seguridad informática.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Universidad FASTA - Facultad de Ingeniería (HUB3 Academy)</h4>
+
+              <span>junio 2026 - agosto 2026</span>
+
+              <p class="timeline-text">
+                <b>Diplomatura en Desarrollo de Software Seguro e IA Aplicada</b> <br> Diplomatura de 50 horas (modalidad virtual). Aprendí a integrar la seguridad en todo el ciclo de vida del desarrollo de software: modelado de amenazas, buenas prácticas de codificación segura, detección y mitigación de vulnerabilidades comunes (OWASP) y automatización de controles dentro de pipelines DevSecOps. También trabajé en la aplicación de inteligencia artificial en el desarrollo y la seguridad, considerando los riesgos propios de su uso.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Universidad FASTA - Facultad de Ingeniería (HUB3 Academy)</h4>
+
+              <span>mayo 2026 - agosto 2026</span>
+
+              <p class="timeline-text">
+                <b>Diplomatura en Ciberseguridad Industrial (ICS/OT)</b> <br> Diplomatura de 50 horas (modalidad virtual). Aprendí los fundamentos de la seguridad en sistemas de control industrial y tecnología operacional: arquitectura de redes industriales, diferencias entre entornos IT y OT, identificación de amenazas y vulnerabilidades en infraestructuras críticas, segmentación, gestión de riesgos y estándares de referencia del sector.
               </p>
 
             </li>
@@ -380,7 +377,7 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="laptop-outline"></ion-icon>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#laptop-outline"></use></svg>
             </div>
 
             <h3 class="h3">Cursos</h3>
@@ -429,7 +426,7 @@
             <!--GOOGLE Y COURSERA-->
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Google & Coursera</h4>
+              <h4 class="h4 timeline-item-title">Google &amp; Coursera</h4>
 
               <span>Certificado profesional de Ciberseguridad de Google</span>
 
@@ -474,8 +471,8 @@
               <span>Hacking Ético y Ciberseguridad</span>
 
               <p class="timeline-text">
-                fundamentos de ciberseguridad ofensiva, técnicas de 
-                hacking ético, uso de Kali Linux, explotación de sistemas 
+                fundamentos de ciberseguridad ofensiva, técnicas de
+                hacking ético, uso de Kali Linux, explotación de sistemas
                 Windows y Linux, y aplicación de Machine Learning al hacking
               </p>
 
@@ -486,13 +483,7 @@
         </section>
 
 
-
-       
-
       </article>
-
-
-
 
 
       <!--
@@ -513,51 +504,51 @@
           <ul class="filter-list">
 
             <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
+              <button class="active" type="button" data-filter-btn="all">All</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Fácil</button>
+              <button type="button" data-filter-btn="facil">Fácil</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Medio</button>
+              <button type="button" data-filter-btn="medio">Medio</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Difícil</button>
+              <button type="button" data-filter-btn="dificil">Difícil</button>
             </li>
 
           </ul>
 
           <div class="filter-select-box">
 
-            <button class="filter-select" data-select>
+            <button class="filter-select" type="button" aria-haspopup="true" aria-expanded="false" data-select>
 
-              <div class="select-value" data-selecct-value>Select category</div>
+              <span class="select-value" data-select-value>Seleccionar categoría</span>
 
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
+              <span class="select-icon">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#chevron-down"></use></svg>
+              </span>
 
             </button>
 
             <ul class="select-list">
 
               <li class="select-item">
-                <button data-select-item>All</button>
+                <button type="button" data-select-item="all">All</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Fácil</button>
+                <button type="button" data-select-item="facil">Fácil</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Medio</button>
+                <button type="button" data-select-item="medio">Medio</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Difícil</button>
+                <button type="button" data-select-item="dificil">Difícil</button>
               </li>
 
             </ul>
@@ -565,35 +556,35 @@
           </div>
 
           <ul class="project-list">
-          
+
       <!--DOCKERLAB-->
-            <li class="project-item  active" data-filter-item data-category="fácil">
+            <li class="project-item  active" data-filter-item data-category="facil">
               <a href="/assets/cfts/Whoiam.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/1.png" alt="finance" loading="lazy">
+                  <img src="./assets/images/1.png" alt="Portada de Whoiam • Fácil" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Whoiam • Fácil </h3>
+                <h3 class="project-title">Whoiam • Fácil</h3>
 
                 <p class="project-category">| NMAP | GOBUSTER | WPSCAN | SEARCHSPLOIT | </p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="difícil">
+            <li class="project-item  active" data-filter-item data-category="dificil">
               <a href="/assets/cfts/Crackoff.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/9.png" alt="arrival" loading="lazy">
+                  <img src="./assets/images/9.png" alt="Portada de Crackoff • Difícil" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Crackoff • Difícil</h3>
@@ -608,10 +599,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/4.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/4.png" alt="Portada de Chmod-4755 • Medio" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Chmod-4755 • Medio</h3>
@@ -620,16 +611,16 @@
 
               </a>
             </li>
-          
-            <li class="project-item  active" data-filter-item data-category="fácil">
+
+            <li class="project-item  active" data-filter-item data-category="facil">
               <a href="/assets/cfts/WhereIsMyWebShell.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/2.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/2.png" alt="Portada de WhereIsMyWebShell • Fácil" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">WhereIsMyWebShell • Fácil</h3>
@@ -637,17 +628,17 @@
                 <p class="project-category">| NMAP | GOBUSTER | WFUZZ | CURL | REVERSE SHELL |</p>
 
               </a>
-            </li>         
+            </li>
 
             <li class="project-item  active" data-filter-item data-category="medio">
               <a href="/assets/cfts/PyRed.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/5.png" alt="dsm." loading="lazy">
+                  <img src="./assets/images/5.png" alt="Portada de PyRed • Medio" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">PyRed • Medio</h3>
@@ -663,10 +654,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/ambassador.jpg" alt="metaspark" loading="lazy">
+                  <img src="./assets/images/ambassador.jpg" alt="Portada de Ambassador • Medio" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Ambassador • Medio</h3>
@@ -676,15 +667,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="difícil">
+            <li class="project-item  active" data-filter-item data-category="dificil">
               <a href="/assets/cfts/HackTheHeaven.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/7.png" alt="summary" loading="lazy">
+                  <img src="./assets/images/7.png" alt="Portada de HackTheHeaven • Difícil" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">HackTheHeaven • Difícil</h3>
@@ -694,15 +685,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="difícil">
+            <li class="project-item  active" data-filter-item data-category="dificil">
               <a href="/assets/cfts/Sender.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/8.png" alt="task manager" loading="lazy">
+                  <img src="./assets/images/8.png" alt="Portada de Sender • Difícil" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Sender • Difícil</h3>
@@ -712,15 +703,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="fácil">
+            <li class="project-item  active" data-filter-item data-category="facil">
               <a href="/assets/cfts/Winterfell.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/3.png" alt="fundo" loading="lazy">
+                  <img src="./assets/images/3.png" alt="Portada de Winterfell • Fácil" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Winterfell • Fácil</h3>
@@ -735,10 +726,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/6.png" alt="fundo" loading="lazy">
+                  <img src="./assets/images/6.png" alt="Portada de Mapache2 • Medio" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Mapache2 • Medio</h3>
@@ -749,16 +740,11 @@
             </li>
 
 
-
-
-            
-
           </ul>
 
         </section>
 
       </article>
-
 
 
         <!--
@@ -770,14 +756,15 @@
           <h2 class="h2 article-title">Blog</h2>
         </header>
         <section class="about-text">
-          <h1>¡Bienvenido a mi blog de ciberseguridad! 🕶️💻</h1>
+          <h3 class="h3">¡Bienvenido a mi blog de ciberseguridad! 🕶️💻</h3>
           <p>
             Este espacio está pensado para compartir conocimientos 📚, curiosidades 🤓, herramientas 🛠️ y aprendizajes 💡 del camino en el mundo del hacking ético y el pentesting.
-            Voy documentando lo que aprendo, lo que me sorprende y lo que me apasiona ❤️. 
+            Voy documentando lo que aprendo, lo que me sorprende y lo que me apasiona ❤️.
+          </p>
         </section>
         <div class="separator"></div>
         <section class="projects">
-    
+
           <ul class="project-list">
           <!--BLOG 1-->
             <li class="project-item active" >
@@ -785,13 +772,13 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/Introduction to Phishing.png" alt="finance" loading="lazy">
+                  <img src="./assets/images/Introduction to Phishing.png" alt="Portada de Introduction to Phishing" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Introduction to Phishing </h3>
+                <h3 class="project-title">Introduction to Phishing</h3>
 
                 <p class="project-category">Mi primera práctica con correos de phishing - BlueTeam</p>
 
@@ -803,10 +790,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="./assets/icons/sprite.svg#eye-outline"></use></svg>
                   </div>
 
-                  <img src="./assets/images/blog-3.png" alt="finance" loading="lazy">
+                  <img src="./assets/images/blog-3.png" alt="Portada de ISO/IEC 27001 Implementando Seguridad de la Información" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">ISO/IEC 27001 Implementando Seguridad de la Información</h3>
@@ -822,74 +809,12 @@
       </article>
 
 
-
-
-
-
-
-
-
-<!--
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26296.275837817037!2d-58.526756199999994!3d-34.52735439999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0c6644d53c1%3A0x9c0cd6b0d56aa783!2sB1605%20Munro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1745245042111!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contacta conmigo!</h3>
-
-
-        <form id="form" method="POST" class="form" data-form>
-          <div class="input-wrapper">
-            <input type="text" name="name" class="form-input" placeholder="Nombre" required data-form-input>
-            <input type="email" name="email" class="form-input" placeholder="Gmail" required data-form-input>
-          </div>
-          <textarea name="message" class="form-input" placeholder="Mensaje" required data-form-input></textarea>
-
-          <button class="form-btn" type="submit" data-form-btn>
-            <ion-icon name="paper-plane"></ion-icon>
-            <span>Send Message</span>
-          </button>
-        </form>
-
-
-
-
-
-
-        </section>
-
-      </article>
-
-     -->
-
     </div>
 
   </main>
 
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" integrity="sha384-EcogLzNzScolFpuLPk/kxJRnmu39K6J1j3+8yrfrebDq7qtbZoB2gfP0rD08JKit" crossorigin="anonymous"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" integrity="sha384-xYx1P7dxspoifaKXuLoaPybset7M4RzoZPDVwB+CrVVobxN3h90OQGVoHYHtCr9G" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js" defer></script>
 
 </body>
 

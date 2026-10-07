@@ -1,147 +1,80 @@
 'use strict';
 
-
-
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
-
-// sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer?.classList.toggle("active");
-  overlay?.classList.toggle("active");
-}
-
-// add click event to all modal items
-testimonialsItem.forEach(function (item) {
-  item.addEventListener("click", function () {
-    if (modalImg) {
-      modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-      modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    }
-    if (modalTitle) {
-      modalTitle.textContent = this.querySelector("[data-testimonials-title]").textContent;
-    }
-    if (modalText) {
-      modalText.textContent = this.querySelector("[data-testimonials-text]").textContent;
-    }
-    testimonialsModalFunc();
-  });
+sidebarBtn?.addEventListener("click", () => {
+  const open = sidebar.classList.toggle("active");
+  sidebarBtn.setAttribute("aria-expanded", String(open));
 });
 
-// add click event to modal close button
-modalCloseBtn?.addEventListener("click", testimonialsModalFunc);
-overlay?.addEventListener("click", testimonialsModalFunc);
-
-
-
-// custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select?.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-selectItems.forEach(function (item) {
-  item.addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    if (selectValue) selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-  });
-});
-
-// filter variables
+const selectValue = document.querySelector("[data-select-value]");
+const filterBtns = document.querySelectorAll("[data-filter-btn]");
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
-const filterFunc = function (selectedValue) {
-  filterItems.forEach(function (item) {
-    if (selectedValue === "all") {
-      item.classList.add("active");
-    } else if (selectedValue === item.dataset.category) {
-      item.classList.add("active");
-    } else {
-      item.classList.remove("active");
-    }
+const setSelectOpen = (open) => {
+  if (!select) return;
+  select.classList.toggle("active", open);
+  select.setAttribute("aria-expanded", String(open));
+};
+
+const applyFilter = (value, label) => {
+  if (selectValue) selectValue.textContent = label;
+  filterItems.forEach((item) => {
+    item.classList.toggle("active", value === "all" || item.dataset.category === value);
   });
-}
+  filterBtns.forEach((btn) => {
+    const current = btn.dataset.filterBtn === value;
+    btn.classList.toggle("active", current);
+    if (current) btn.setAttribute("aria-pressed", "true");
+    else btn.setAttribute("aria-pressed", "false");
+  });
+};
 
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
+select?.addEventListener("click", () => setSelectOpen(!select.classList.contains("active")));
 
-filterBtn.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    if (selectValue) selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-
-    lastClickedBtn?.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
+selectItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    applyFilter(item.dataset.selectItem, item.textContent.trim());
+    setSelectOpen(false);
+    select.focus();
   });
 });
 
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => applyFilter(btn.dataset.filterBtn, btn.textContent.trim()));
+});
 
+document.addEventListener("click", (event) => {
+  if (select && !select.parentElement.contains(event.target)) setSelectOpen(false);
+});
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (select?.classList.contains("active")) {
+    setSelectOpen(false);
+    select.focus();
+  }
+});
 
-// add event to all form input field
-if (form && formBtn) {
-  formInputs.forEach(function (input) {
-    input.addEventListener("input", function () {
-      if (form.checkValidity()) {
-        formBtn.removeAttribute("disabled");
-      } else {
-        formBtn.setAttribute("disabled", "");
-      }
-    });
-  });
-}
-
-
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const navLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
-navigationLinks.forEach(function (link, index) {
-  link.addEventListener("click", function () {
-    pages.forEach(function (page, i) {
-      if (link.textContent.toLowerCase() === page.dataset.page) {
-        page.classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        page.classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    });
+const showPage = (name) => {
+  pages.forEach((page) => page.classList.toggle("active", page.dataset.page === name));
+  navLinks.forEach((link) => {
+    const current = link.dataset.navLink === name;
+    link.classList.toggle("active", current);
+    if (current) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+};
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    showPage(link.dataset.navLink);
+    window.scrollTo(0, 0);
   });
 });
